@@ -6,14 +6,16 @@
 </head>
 <body>
 <script>
+    //构造函数 命名规则:  首字母大写，与系统函数 一致
     function CreatePerson(name, age, sex) {
         this.name = name;
         this.age = age;
         this.sex = sex;
     }
+    //原型 prototype 应写在构造函数下面
 
+    //使用原型的好处:节省内存 提升性能  相同的引用 只占用一处内存
     CreatePerson.prototype.showName = function () {
-
         alert(this.name);
     };
 
