@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function CreatePerson(name, age, sex) {
+        this.name = name;
+        this.age = age;
+        this.sex = sex;
+    }
+
+    CreatePerson.prototype.showName = function () {
+
+        alert(this.name);
+    };
+
+    var personLee = new CreatePerson('李磊', '20', '男');
+    var personHan=new CreatePerson('韩梅梅','18','女');
+    personLee.showName();
+    personHan.showName();
+</script>
+</body>
+</html>
