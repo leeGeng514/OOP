@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function CreateFn() {
+        console.log('构造函数');
+    }
+
+    CreateFn.prototype.number=100;
+
+    var fn1=new CreateFn;
+    var fn2=new CreateFn;
+
+//    fn1.__proto__.number=200;
+//    //实例化对象的原型链 全等于 构造函数的原型
+//           // fn1.__proto__ = CreateFn.prototype
+    console.log(fn1.__proto__ === CreateFn.prototype);
+//    console.dir(fn2.__proto__.number--);
+//    console.dir(fn1);
+
+    //构造函数的prototype的constructor 是自己本身
+    console.dir(CreateFn);
+
+</script>
+</body>
+</html>
