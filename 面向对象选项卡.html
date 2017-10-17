@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{
+            width: 180px;
+            height: 100px;
+            border: 1px solid #000;
+            display: none;
+        }
+        .active{
+            background-color: yellow;
+        }
+        .show{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+<section id="box">
+    <button class="active">按钮1</button>
+    <button>按钮2</button>
+    <button>按钮3</button>
+    <div class="show">11111</div>
+    <div>22222</div>
+    <div>33333</div>
+</section>
+<section id="box2">
+    <button class="active">按钮1</button>
+    <button>按钮2</button>
+    <button>按钮3</button>
+    <div class="show">11111</div>
+    <div>22222</div>
+    <div>33333</div>
+</section>
+<script>
+    /*
+    function Tab() {
+        this.btns=box.getElementsByTagName('button');
+        this.content=box.getElementsByTagName('div');
+    }
+
+    Tab.prototype.tabs=function () {
+        var _this=this;
+        for(var i=0;i<this.btns.length;i++){
+            this.btns[i].index=i;
+            this.btns[i].onclick=function () {
+                _this.event(this);
+            }
+        }
+    };
+
+    Tab.prototype.event=function (it) {
+        for(var i=0;i<this.btns.length;i++){
+            this.btns[i].className='';
+            this.content[i].className='';
+        }
+        it.className='active';
+        this.content[it.index].className='show';
+    };
+
+    var play=new Tab;
+    play.tabs();
+    */
+
+    var div=document.getElementById('box');
+    var div2=document.getElementById('box2');
+    //归类为选项卡
+    function Tab(box) {
+        this.btns=box.getElementsByTagName('button');
+        this.content=box.getElementsByTagName('div');
+    }
+
+    //给按钮绑定事件
+    Tab.prototype.tabs=function () {
+        var _this=this;
+        for(var i=0;i<this.btns.length;i++){
+            this.btns[i].index=i;
+            this.btns[i].onclick=function () {
+                //点击事件可能复用 所以拎出去写
+                console.log(this);
+                _this.event(this);
+            }
+        }
+    };
+
+    Tab.prototype.event=function (that) {
+        for(var i=0;i<this.btns.length;i++){
+            this.btns[i].className='';
+            this.content[i].className='';
+        }
+        that.className='active';
+        this.content[that.index].className='show';
+    };
+
+    var play=new Tab(div);
+    var play1=new Tab(div2);
+
+    play.tabs();
+    play1.tabs();
+</script>
+</body>
+</html>

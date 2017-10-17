@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function Person(name,age,sex,job) {
+        this.name=name;
+        this.age=age;
+        this.sex=sex;
+        this.job=job;
+    }
+
+//    Person.prototype.showName=function () {
+//        alert(this.name);
+//    };
+
+    Object.prototype.showName=function () {
+        alert(this.job);
+    };
+
+    var lee=new Person('李庚',27,'男','前端');
+
+    lee.showName();
+    console.log(lee);
+</script>
+</body>
+</html>

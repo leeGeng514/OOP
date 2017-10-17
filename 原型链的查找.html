@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    /*
+    function Person() {
+
+    }
+
+    Object.prototype.say=function () {
+        alert('222');
+    };
+
+    Function.prototype.say=function () {
+        alert('aaa');
+    };
+
+    Person.prototype.say=function () {
+        alert('ccc');
+    };
+
+    var p=new Person();
+
+    // p是实例化对象 通过原型链__proto__ 找到构造函数Person的prototype, 所以弹出ccc
+    p.say();
+
+    */
+
+    function Person() {
+
+    }
+
+    Object.prototype.say=function () {
+        alert('222');
+    };
+
+    Function.prototype.say=function () {
+        alert('aaa');
+    };
+
+//    Person.prototype.say=function () {
+//        alert('ccc');
+//    };
+
+    var p=new Person();
+//    Function.say();
+
+    console.dir(Function);
+
+</script>
+</body>
+</html>
