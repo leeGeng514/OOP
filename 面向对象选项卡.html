@@ -4,16 +4,18 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <style>
-        div{
+        div {
             width: 180px;
             height: 100px;
             border: 1px solid #000;
             display: none;
         }
-        .active{
+
+        .active {
             background-color: yellow;
         }
-        .show{
+
+        .show {
             display: block;
         }
     </style>
@@ -65,38 +67,38 @@
     play.tabs();
     */
 
-    var div=document.getElementById('box');
-    var div2=document.getElementById('box2');
+    var div = document.getElementById('box');
+    var div2 = document.getElementById('box2');
+
     //归类为选项卡
     function Tab(box) {
-        this.btns=box.getElementsByTagName('button');
-        this.content=box.getElementsByTagName('div');
+        this.btns = box.getElementsByTagName('button');
+        this.content = box.getElementsByTagName('div');
     }
 
     //给按钮绑定事件
-    Tab.prototype.tabs=function () {
-        var _this=this;
-        for(var i=0;i<this.btns.length;i++){
-            this.btns[i].index=i;
-            this.btns[i].onclick=function () {
+    Tab.prototype.tabs = function () {
+        var _this = this;
+        for (var i = 0; i < this.btns.length; i++) {
+            this.btns[i].index = i;
+            this.btns[i].onclick = function () {
                 //点击事件可能复用 所以拎出去写
-                console.log(this);
                 _this.event(this);
             }
         }
     };
 
-    Tab.prototype.event=function (that) {
-        for(var i=0;i<this.btns.length;i++){
-            this.btns[i].className='';
-            this.content[i].className='';
+    Tab.prototype.event = function (that) {
+        for (var i = 0; i < this.btns.length; i++) {
+            this.btns[i].className = '';
+            this.content[i].className = '';
         }
-        that.className='active';
-        this.content[that.index].className='show';
+        that.className = 'active';
+        this.content[that.index].className = 'show';
     };
 
-    var play=new Tab(div);
-    var play1=new Tab(div2);
+    var play = new Tab(div);
+    var play1 = new Tab(div2);
 
     play.tabs();
     play1.tabs();

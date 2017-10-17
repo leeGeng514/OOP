@@ -60,8 +60,8 @@
       <file leaf-file-name="面向对象选项卡.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/面向对象选项卡.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="703">
-              <caret line="101" column="17" lean-forward="true" selection-start-line="101" selection-start-column="17" selection-end-line="101" selection-end-column="17" />
+            <state relative-caret-position="622">
+              <caret line="102" column="16" lean-forward="false" selection-start-line="102" selection-start-column="16" selection-end-line="102" selection-end-column="16" />
               <folding />
             </state>
           </provider>
@@ -174,12 +174,12 @@
       <option name="presentableId" value="Default" />
       <updated>1508078723621</updated>
       <workItem from="1508078725158" duration="1301000" />
-      <workItem from="1508214489978" duration="8449000" />
+      <workItem from="1508214489978" duration="8538000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="9750000" />
+    <option name="totallyTimeSpent" value="9839000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -264,8 +264,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/面向对象选项卡.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="703">
-          <caret line="101" column="17" lean-forward="true" selection-start-line="101" selection-start-column="17" selection-end-line="101" selection-end-column="17" />
+        <state relative-caret-position="622">
+          <caret line="102" column="16" lean-forward="false" selection-start-line="102" selection-start-column="16" selection-end-line="102" selection-end-column="16" />
           <folding />
         </state>
       </provider>
