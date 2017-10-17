@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    //系统构造函数的原型与原型链
+    var arr1=[];
+    var arr2=[];
+
+    //修改Array 的 push 方法
+    Array.prototype.push=function () {
+        alert('已修改');
+    };
+    //将基础类型的值 存储在prototype
+    Array.prototype.name='基础类型';
+
+    arr1.push();
+    arr2.push();
+    console.log('arr1的name属性:'+arr1.name);
+    console.log('arr2的name属性:'+arr2.name);
+    console.log(arr1.push===arr2.push);
+
+    //说明: 将方法或者属性 放在构造函数的原型下 用该构造函数构造出来的对象 都将具有该构造函数原型下的 方法和属性
+
+
+</script>
+</body>
+</html>
