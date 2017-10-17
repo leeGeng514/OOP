@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div {
+            background-color: red;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="box1"></div>
+<div id="box2"></div>
+<script>
+    //构造函数 box=元素 w=宽度 h=高度 c=颜色
+    function CreateBox(box, w, h, c) {
+        //将传入元素存到 构造函数的实例下 obj 属性内
+        this.obj = box;
+        this.obj.style.width = w; //设置宽
+        this.obj.style.height = h; //设置高
+        this.obj.style.backgroundColor = c; //设置颜色
+    }
+
+    //将down事件 存放在构造函数的原型下
+    CreateBox.prototype.eventD = function () {
+        //将 指向构造函数的this 存在变量内
+        var _this = this;
+        //给元素添加down事件
+        this.obj.addEventListener('mousedown', down, false);
+        //down 事件函数
+        function down(ev) {
+            _this.disY = ev.clientY - _this.obj.offsetTop;
+            _this.disX = ev.clientX - _this.obj.offsetLeft;
+            //调用 构造函数 下的eventM方法,添加move事件
+            _this.eventM();
+        }
+    };
+    //将move事件 存放在构造函数的原型下
+    CreateBox.prototype.eventM = function () {
+        //将 指向构造函数的this 存在变量内
+        var _this = this;
+        //给document添加move事件
+        document.addEventListener('mousemove', move, false);
+        //调用 构造函数下的eventU方法 添加up事件 (注意:要将move事件函数传入,否则在eventU内 拿不到move事件函数)
+        _this.eventU(move);
+        function move(ev) {
+            _this.obj.style.left = ev.clientX - _this.disX + 'px';
+            _this.obj.style.top = ev.clientY - _this.disY + 'px';
+        }
+    };
+    //将up事件 存放在构造函数的原型下           move 事件函数
+    CreateBox.prototype.eventU = function (move) {
+        //给document添加up事件
+        document.addEventListener('mouseup', up, false);
+        function up() {
+            //接收到eventM 内的move函数
+            console.log(move);
+
+            document.removeEventListener('mousemove', move, false);
+            document.removeEventListener('moveseup', up, false);
+        }
+    };
+
+    var box1 = document.getElementById('box1');
+    var box2 = document.getElementById('box2');
+    var div1 = new CreateBox(box1, '100px', '100px', 'red');
+    var div2 = new CreateBox(box2, '100px', '100px', 'green');
+
+    div1.eventD();
+    div2.eventD();
+
+</script>
+</body>
+</html>
