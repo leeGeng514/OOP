@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function Fn() {
+        this.name=name;
+    }
+
+    Object.prototype.say=function () {
+        alert('大的Fn');
+    };
+
+    var f=new Fn;
+    f.say();
+    console.dir(f);
+</script>
+</body>
+</html>

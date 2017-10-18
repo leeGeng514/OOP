@@ -16,15 +16,16 @@
     var B=function() {
 
     };
-
     var b=new B();
+    console.log(B.prototype);
+//    Fn1.prototype=b;
     var childFn=new Fn1;
 
 
-    console.log(Fn1.prototype);
+//    console.log(childFn.constructor===b);
 
     //通过构造函数new出来的对象实例的__proto__等于构造函数的prototype
-    console.log(childFn.__proto__===Fn1.prototype);
+    console.log(childFn.__proto__.constructor === Fn1);
     //构造函数的prototype的constructor默认是构造函数本身
     console.log(Fn1.prototype.constructor===Fn1);
 </script>

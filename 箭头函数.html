@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //箭头函数的this 永远指向申明函数的父级作用域
+    var fn=()=>{
+        alert(this); //window
+    }
+    (function () {
+        fn();
+    })();
+</script>
+</body>
+</html>
